@@ -1,0 +1,64 @@
+#include<stdio.h>
+
+float sum;
+
+void add(float op1, float op2)
+{
+	sum = (float)op1 + op2;//(float)此处用于强制转换类型
+	printf("%.2f\n\n",sum);
+}
+
+void sub(float op1, float op2)
+{
+	sum = op1 - op2;
+	printf("%.2f\n\n",sum);
+}
+
+void mult(float op1, float op2)
+{
+	sum = op1 * op2;
+	printf("%.2f\n\n",sum);
+}
+
+void div(float op1, float op2)
+{
+	if (op2 == 0)
+	{
+		printf("被除数不能为0！\n\n");
+	}
+	else
+	{
+		sum = op1 / op2;
+		printf("%.2f\n\n",sum);
+	}
+}
+
+int main()
+
+{
+	float op1, op2;
+	char ch;
+	
+	while(scanf("%f%c%f", &op1, &ch, &op2)!=EOF)
+	{
+		printf("\n");
+
+		switch (ch)
+		{
+		case '+':
+			add(op1, op2);
+				break;
+		case '-':
+			sub(op1, op2);
+				break;
+		case '*':
+			mult(op1, op2);
+			break;
+		case '/':
+			div(op1, op2);
+			break;
+		}
+	}
+
+	return 0;
+}
